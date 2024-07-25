@@ -12,7 +12,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setEntryOk(true);
-    },0);
+    },1300);
     return () => clearTimeout(timer);
   }, []);
 
@@ -24,8 +24,8 @@ export default function Home() {
       {
          entryOk &&
           <> 
-            {/* <Navbar></Navbar> */}
-            {/* <AboutPage></AboutPage> */}
+            <Navbar></Navbar>
+            <AboutPage></AboutPage>
             <Projects></Projects>
           </>
       }

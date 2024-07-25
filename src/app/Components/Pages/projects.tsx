@@ -1,6 +1,7 @@
 import { FunctionComponent } from "react";
 import GlowingHeader from "../Elements/glowing-header";
 import ProjectCard from "../Elements/ProjectCard";
+import { motion } from "framer-motion";
 
 interface ProjectsProps {
     
@@ -12,9 +13,9 @@ const Projects: FunctionComponent<ProjectsProps> = () => {
     <div className="w-screen min-h-screen">
 
         <div className="flex flex-row gap-8 px-8 justify-around w-full">
-                <div className="flex-1 py-8 text-center">
+                <motion.div initial={{x:-10, opacity: 0}} animate={{ x:0, opacity: 1}} className="flex-1 py-8 text-center">
                     <GlowingHeader header="Projects" fixed={false}></GlowingHeader>
-                </div>
+                </motion.div>
 
                 <div className="flex-1 py-8 text-center hidden lg:block">
                     <GlowingHeader header="プロジェクト" fixed={false}></GlowingHeader>
