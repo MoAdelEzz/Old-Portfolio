@@ -28,9 +28,6 @@ const Projects: FunctionComponent<ProjectsProps> = () => {
             <div className="w-full flex flex-row gap-28 px-28 justify-around">   
                 {/* Gigachat */}
                 <motion.div 
-                variants={{hidden: {opacity:0, x:-40}, visible: {opacity:1, x:0}}}
-                initial="hidden"
-                transition={{duration: 1, ease: "easeInOut"}}
                 className="flex-1">
                     <ProjectCard 
                         name={"GigaChat"} 
@@ -66,9 +63,6 @@ const Projects: FunctionComponent<ProjectsProps> = () => {
                 {/* Laptopia */}
                 <motion.div 
                 className="flex-1"
-                variants={{hidden: {opacity:0, x:-40}, visible: {opacity:1, x:0}}}
-                initial="hidden"
-                transition={{duration: 1, ease: "easeInOut"}}
                 >
                     <ProjectCard 
                         name={"Laptopia"} 
