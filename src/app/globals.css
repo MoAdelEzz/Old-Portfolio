@@ -16,6 +16,15 @@
   }
 }
 
+@font-face {
+  font-family: "Headers";
+  src: url('../../public/fonts/Silkscreen/Silkscreen-Regular.ttf');
+}
+
+.font-Headers{
+  font-family: 'Headers';
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(

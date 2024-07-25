@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import EntryStar from "../entry-page-star";
+import EntryStar from "../Elements/entry-page-star";
 import {motion} from "framer-motion"
 
 
@@ -11,7 +11,12 @@ const EntryPage: FunctionComponent<EntryPageProps> = () => {
 
     
     return ( 
-        <div className="flex gap-3 justify-center items-center relative h-screen w-screen">
+        <motion.div 
+        
+        initial="initial"
+        animate={{scale: 0}}
+        transition={{duration: 0.5, delay: 1}}
+        className="flex gap-3 justify-center items-center relative h-screen w-screen">
             {/* Logo */}
             <motion.div className="absolute translate-x-1/2 translate-y-1/2 "
                 initial={{opacity: 0, x: "50%", y: "60%"}}
@@ -36,7 +41,7 @@ const EntryPage: FunctionComponent<EntryPageProps> = () => {
 
             <EntryStar size={50} delay={0}></EntryStar>
 
-        </div>
+        </motion.div>
      );
 }
  

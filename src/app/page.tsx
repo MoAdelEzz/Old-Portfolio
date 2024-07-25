@@ -1,8 +1,9 @@
 'use client'
 import { useEffect, useState } from "react";
-import Navbar from "./Components/navbar";
+import Navbar from "./Components/Elements/navbar";
 import AboutPage from "./Components/Pages/about";
 import EntryPage from "./Components/Pages/entry-animation";
+import Projects from "./Components/Pages/projects";
 
 export default function Home() {
 
@@ -11,7 +12,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setEntryOk(true);
-    },1500);
+    },0);
     return () => clearTimeout(timer);
   }, []);
 
@@ -23,8 +24,9 @@ export default function Home() {
       {
          entryOk &&
           <> 
-            <Navbar></Navbar>
-            <AboutPage></AboutPage>
+            {/* <Navbar></Navbar> */}
+            {/* <AboutPage></AboutPage> */}
+            <Projects></Projects>
           </>
       }
     </div>
