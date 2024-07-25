@@ -36,8 +36,8 @@ const ProjectCard: FunctionComponent<ProjectCardProps> = ({name, backgroundUrl, 
     const toolsRender = tools?.map((tool, idx)=>{return <FontAwesomeIcon icon={tool} key={"tool" +idx} fontSize={40} color="red"></FontAwesomeIcon>})
     
 
-    const contents = contentUrl.map((url)=>{
-        return <motion.div variants={vidVariants} transition={{duration: 0.2, ease: "easeInOut"}} className="opacity-0 hidden w-full h-auto">
+    const contents = contentUrl.map((url, idx)=>{
+        return <motion.div key={"video" + idx} variants={vidVariants} transition={{duration: 0.2, ease: "easeInOut"}} className="opacity-0 hidden w-full h-auto">
                     <video src={url} autoPlay = {true} muted loop width={500} className="w-full h-full"/>
                 </motion.div>
     })
