@@ -81,17 +81,7 @@ const GlowingHeader: FunctionComponent<GlowingHeaderProps> = ({header, fixed, fi
 
     useEffect(()=>{animationSeries()}, [])
 
-    const characters = header.split("").map((c, idx)=>{
-        const calculatedColor = calculateColor(startingColor, step, idx)
-        console.log("text-[rgb" + calculatedColor + "]");
-        
-        return <span className={"text-[rgb" + calculatedColor + "]"}>
-            {c}
-        </span>
-    })
-
     const initialGradient = fixed && fixedColor != null && fixedColor != undefined ? generateGradient(fixedColor) : "linear-gradient(to right, #f00, #f00, #00f)" 
-    console.log(initialGradient);
     
     return ( 
         <div className="antialiased opacity-50 rounded-2xl" ref={bgRef}>
