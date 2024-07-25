@@ -10,21 +10,6 @@ interface ProjectsProps {
 }
  
 const Projects: FunctionComponent<ProjectsProps> = () => {
-    let refs = [];
-    let isInViews = [];
-    let animationControls = [];
-    for (let i = 0; i < 4; i++) {
-        refs.push(useRef(null));
-        isInViews.push(useInView(refs[i], {once: true}))
-        animationControls.push(useAnimation());
-        useEffect(()=>{
-            console.log("here");
-            animationControls[i].start("visible")
-        }, [isInViews[i]])
-    }
-
-
-    
     return (     
     <div className="w-screen min-h-screen ">
 
@@ -46,8 +31,6 @@ const Projects: FunctionComponent<ProjectsProps> = () => {
                 variants={{hidden: {opacity:0, x:-40}, visible: {opacity:1, x:0}}}
                 initial="hidden"
                 transition={{duration: 1, ease: "easeInOut"}}
-                ref={refs[0]}
-                animate={animationControls[0]}
                 className="flex-1">
                     <ProjectCard 
                         name={"GigaChat"} 
@@ -86,8 +69,6 @@ const Projects: FunctionComponent<ProjectsProps> = () => {
                 variants={{hidden: {opacity:0, x:-40}, visible: {opacity:1, x:0}}}
                 initial="hidden"
                 transition={{duration: 1, ease: "easeInOut"}}
-                ref={refs[2]}
-                animate={animationControls[2]}
                 >
                     <ProjectCard 
                         name={"Laptopia"} 

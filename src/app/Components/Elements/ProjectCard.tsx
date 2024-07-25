@@ -33,7 +33,7 @@ const ProjectCard: FunctionComponent<ProjectCardProps> = ({name, backgroundUrl, 
         hover: { opacity: 1, display: "block"},
     }
 
-    const toolsRender = tools?.map((tool)=>{return <FontAwesomeIcon icon={tool} fontSize={40} color="red"></FontAwesomeIcon>})
+    const toolsRender = tools?.map((tool, idx)=>{return <FontAwesomeIcon icon={tool} key={"tool" +idx} fontSize={40} color="red"></FontAwesomeIcon>})
     
 
     const contents = contentUrl.map((url)=>{
