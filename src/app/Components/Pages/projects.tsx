@@ -4,6 +4,7 @@ import ProjectCard from "../Elements/ProjectCard";
 import { animate, motion, useAnimation, useInView } from "framer-motion";
 import { faAngular, faFlutter, faJava, faPhp, faReact, faUnity } from "@fortawesome/free-brands-svg-icons";
 import { faDatabase, faMicrochip } from "@fortawesome/free-solid-svg-icons";
+import AnimateOnScroll from "../Elements/AnimateOnScroll";
 
 interface ProjectsProps {
     
@@ -17,53 +18,47 @@ const Projects: FunctionComponent<ProjectsProps> = () => {
                 <motion.div initial={{x:-10, opacity: 0}} animate={{ x:0, opacity: 1}} className="flex-1 py-8 text-center">
                     <GlowingHeader header="Projects" fixed={false}></GlowingHeader>
                 </motion.div>
-
-                <div className="flex-1 py-8 text-center hidden lg:block">
-                    <GlowingHeader header="プロジェクト" fixed={false}></GlowingHeader>
-                </div>
         </div>      
 
-        <div className="relative flex flex-col gap-10 justify-start items-center ">
-            {/* row1 */}
-            <div className="w-full flex flex-row gap-28 px-28 justify-around">   
-                {/* Gigachat */}
-                <motion.div 
-                className="flex-1">
-                    <ProjectCard 
-                        name={"GigaChat"} 
-                        backgroundUrl={"projects/X-Clone/background.png"} 
-                        contentUrl={["projects/X-Clone/video.mp4", "projects/X-Clone/video-2.mp4", "projects/X-Clone/video-3.mp4"]}
-                        contentType={"VIDEO"} 
-                        description={"This project entailed the development of a comprehensive Twitter clone, meticulously replicating core functionalities and incorporating additional features to enhance user experience. The project was executed through a collaborative team effort, spanning both front-end, cross platform, testing, DevOps and back-end development."} 
-                        link={"https://github.com/MoAdelEzz/X-Clone"}
-                        gradientColor={[[255,255,255],[255,0,0]]}
-                        tools={[faFlutter]}
-                    ></ProjectCard>
-                </motion.div>
-
-
-                {/* Doodle Search Engine */}
-                <div className="flex-1">
-                    <ProjectCard 
-                        name={"Doodle"} 
-                        backgroundUrl={"projects/Doodle/background.png"} 
-                        contentUrl={["projects/Doodle/video.mp4"]}
-                        contentType={"VIDEO"} 
-                        description={"A Complete Search Engine Developed using java spring boot for server side and reactjs for client ui, the server provides all search engine functionality starting from crawling the web to find web pages, an indexer that stores the data in a way that will result in optimized searching performance, ranker and query engine"} 
-                        link={"https://www.linkedin.com/posts/mohammed-adel-mohammed-ezz-eldin-115609245_im-thrilled-to-share-that-we-me-and-my-activity-7076886519717707776-u96f?utm_source=share&utm_medium=member_desktop"}
-                        gradientColor={[[255,255,0],[255,0,0]]}
-                        tools={[faJava, faReact, faDatabase]}
-                    ></ProjectCard>
-                </div>
+        <div className="relative flex flex-col gap-10 md:gap-0 justify-start items-center ">  
+            {/* Gigachat */}
+            <div className="w-full flex flex-row gap-28 md:px-28 justify-around"> 
+                <AnimateOnScroll className="flex-1" direction="RIGHT">
+                            <ProjectCard 
+                                name={"GigaChat"} 
+                                backgroundUrl={"projects/X-Clone/background.png"} 
+                                contentUrl={["projects/X-Clone/video.mp4", "projects/X-Clone/video-2.mp4", "projects/X-Clone/video-3.mp4"]}
+                                contentType={"VIDEO"} 
+                                description={"This project entailed the development of a comprehensive Twitter clone, meticulously replicating core functionalities and incorporating additional features to enhance user experience. The project was executed through a collaborative team effort, spanning both front-end, cross platform, testing, DevOps and back-end development."} 
+                                link={"https://github.com/MoAdelEzz/X-Clone"}
+                                gradientColor={[[255,255,255],[255,0,0]]}
+                                tools={[faFlutter]}
+                            />
+                </AnimateOnScroll>
+                <div className="flex-1 hidden md:block"></div>
             </div>
 
+            {/* Doodle */}
+            <div className="w-full flex flex-row gap-28 md:px-28 justify-around"> 
+            <div className="flex-1  hidden md:block"></div>
+                <AnimateOnScroll className="flex-1" direction="LEFT">
+                    <ProjectCard 
+                            name={"Doodle"} 
+                            backgroundUrl={"projects/Doodle/background.png"} 
+                            contentUrl={["projects/Doodle/video.mp4"]}
+                            contentType={"VIDEO"} 
+                            description={"A Complete Search Engine Developed using java spring boot for server side and reactjs for client ui, the server provides all search engine functionality starting from crawling the web to find web pages, an indexer that stores the data in a way that will result in optimized searching performance, ranker and query engine"} 
+                            link={"https://www.linkedin.com/posts/mohammed-adel-mohammed-ezz-eldin-115609245_im-thrilled-to-share-that-we-me-and-my-activity-7076886519717707776-u96f?utm_source=share&utm_medium=member_desktop"}
+                            gradientColor={[[255,255,0],[255,0,0]]}
+                            tools={[faJava, faReact, faDatabase]}
+                    />
+                </AnimateOnScroll>
+            </div>
 
-            {/* row2 */}
-            <div className="w-full flex flex-row gap-28 px-28 justify-around">   
-                {/* Laptopia */}
-                <motion.div 
-                className="flex-1"
-                >
+            {/* Laptopia */}
+            <div className="w-full flex flex-row gap-28 md:px-28 justify-around"> 
+                {/* Doodle Search Engine */}
+                <div className="flex-1 mt-16">
                     <ProjectCard 
                         name={"Laptopia"} 
                         backgroundUrl={"projects/Laptopia/background.png"} 
@@ -74,30 +69,29 @@ const Projects: FunctionComponent<ProjectsProps> = () => {
                         gradientColor={[[0,0,255],[255,255,255]]}
                         tools={[faAngular, faPhp, faDatabase]}
                     ></ProjectCard>
-                </motion.div>
+                </div>
+                <div className="flex-1 hidden md:block"></div>
+            </div>
 
-
-
-
-                {/* Unpredictable */}
-                <div className="flex-1">
+            {/* Unpredictable */}
+            <div className="w-full flex flex-row gap-28 md:px-28 justify-around"> 
+            <div className="flex-1 hidden md:block"></div>
+                <AnimateOnScroll className="flex-1" direction="LEFT">
                     <ProjectCard 
                         name={""} 
                         backgroundUrl={"projects/Unpredictable/background.png"} 
-                        contentUrl={["projects/Doodle/video.mp4"]}
+                        contentUrl={["projects/Unpredictable/video.mp4"]}
                         contentType={"VIDEO"} 
                         description={"2D indie game developed using UNITY game engine, the game idea is something like the famous game (trap adventure) where the player will experience unexpected traps while trying to reach the finish line"} 
-                        link={"https://www.linkedin.com/posts/mohammed-adel-mohammed-ezz-eldin-115609245_im-thrilled-to-share-that-we-me-and-my-activity-7076886519717707776-u96f?utm_source=share&utm_medium=member_desktop"}
+                        link={"https://www.facebook.com/profile.php?id=61554777404207"}
                         gradientColor={[[2,0,0],[50,50,50]]}
                         tools={[faUnity]}
-                    ></ProjectCard>
-                </div>
+                    />
+                </AnimateOnScroll>
             </div>
-
-
-
+             
             <div></div>
-            <div className="w-[2px] h-full bg-[rgba(255,255,255,0.4)] absolute" style={{boxShadow: "2px 2px 100px rgba(255,255,255,0.5)"}}></div>
+            <div className="w-[2px] h-full hidden md:block bg-[rgba(255,255,255,0.4)] absolute" style={{boxShadow: "2px 2px 100px rgba(255,255,255,0.5)"}}></div>
         </div>
     </div>
         

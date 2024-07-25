@@ -8,7 +8,7 @@ import LayoutBox from "../Elements/LayoutBox";
 const aboutMe: string = "Mohammed Adel is a 5★ character from the fire element who follows the Path of Development." 
 + "A member of faculty of engineering cairo university in 5th and last year."
 + "With his laptop, MoA Born as a software engineer who can design and develop a high quality software using all his knowledge in software technologies and principles."
-+ "To learn more about MoA keep going in his portfolio. Use the tabs to quickly switch to the kind of information you are looking for"
++ "To learn more about MoA keep going in his portfolio."
 
 
 interface AboutPageProps {
