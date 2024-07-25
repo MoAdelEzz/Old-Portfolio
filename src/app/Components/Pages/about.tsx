@@ -108,7 +108,7 @@ const AboutPage: FunctionComponent<AboutPageProps> = () => {
                 initial={{ scale: 1.5 }}
 
             >
-                <img src="images/MoA.jpg" className="h-screen w-full" />
+                <img src="images/MoA.jpg" className="w-full aspect-square" />
             </motion.div>
         </motion.div>
     );
